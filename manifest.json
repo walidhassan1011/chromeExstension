@@ -1,0 +1,26 @@
+{
+  "name": "willyx-picker",
+  "description": "A Color Picker extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "16": "/images/picker_16.png",
+    "32": "/images/picker_32.png",
+    "48": "/images/picker_48.png"
+  }
+}
